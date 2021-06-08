@@ -26,3 +26,14 @@ class Configuration(models.Model):
                                       related_name='marketplace')
     endpoint = models.URLField('Endpoint')
     secret_key = models.CharField(max_length=255)
+    apis = models.URLField('API')
+
+    class Meta:
+        verbose_name_plural = 'settings'
+        verbose_name = 'setting'
+
+    def __str__(self):
+        return self.endpoint
+
+    def get_absolute_url(self):
+        return r('config-list')

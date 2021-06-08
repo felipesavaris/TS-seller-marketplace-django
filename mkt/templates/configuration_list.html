@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Configuracao {% endblock %}
+
+{% block content %}
+
+    <section class="section-content">
+        <div class="container">
+            <h3>Configuracao - Marketplace</h3>
+            <br>
+            <p><a href="{% url 'config-add' %}">Nova configuracao</a></p>
+
+            <table class="table table_bordered">
+                <tr>
+                    <th>ID</th>
+                    <th>endpoint</th>
+                    <th>secret_key</th>
+                    <th>apis</th>
+                </tr>
+
+                {% for config in configuration_list %}
+                    <tr>
+
+                        <td>{{ config.id }}</td>
+                        <td>{{ config.endpoint }}</td>
+                        <td>{{ config.secret_key }}</td>
+                        <td>{{ config.apis }}</td>
+                        <td>
+                            <a href="{% url 'config-update' config.pk %}">Editar</a> |
+                            <a href="{% url 'delete-config' config.pk %}">Deletar
+
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+{% endblock %}
+

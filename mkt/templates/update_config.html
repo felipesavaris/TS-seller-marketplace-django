@@ -1,17 +1,19 @@
-{% extends 'base.html' %}
+{% extends  'base.html'  %}
+
+{% block title %}Configuracao{% endblock %}
 
 {% block content %}
     <section class="section-content">
         <div class="container">
-            <h3>Deleta: {{market.name}}</h3>
+            <h3>Edit Configuracao</h3>
             <br>
 
             <form action="" method="post">
 
                 {% csrf_token %}
 
-              <strong>Are you sure ?!</strong><br/><br/>
-                <button type="submit" class="btn btn-success">Deleta</button>
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-success">Salvar</button>
             </form>
         </div>
     </section>

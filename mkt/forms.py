@@ -1,5 +1,5 @@
 from django import forms
-from mkt.models import Marketplace
+from mkt.models import Marketplace, Configuration
 
 
 class MarketplaceForm(forms.ModelForm):
@@ -23,4 +23,22 @@ class MarketplaceForm(forms.ModelForm):
             'name': "Nome",
             'description': "Descrição",
             'technical_manager': "Responsável técnico",
+        }
+
+
+class ConfigurationForm(forms.ModelForm):
+    class Meta:
+        model = Configuration
+        fields = '__all__'
+
+        widgets = {
+            'endpoint': forms.TextInput(attrs={'class': 'form-control'}),
+            'secret_key': forms.TextInput(attrs={'class': 'form-control'}),
+            'apis': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+        labels = {
+            'endpoint': "Endpoint",
+            'secret_key': "Secret_key",
+            'apis': "Apis",
         }

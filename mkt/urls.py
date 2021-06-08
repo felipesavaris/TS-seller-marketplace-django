@@ -10,5 +10,12 @@ urlpatterns = [
     path('mkt/update/<int:pk>', views.update_mkt, name='mkt-update'),
 
 
+    path('list-config',  views.list_config, name='config-list'),
+    path('create/config', views.new_config, name='config-add'),
+    path('<int:pk>/delete/config', views.ConfigDeleteView.as_view(),
+         name='delete-config'),
+    path('config/update/<int:pk>', views.update_config, name='config-update'),
+
+
 
 ]
