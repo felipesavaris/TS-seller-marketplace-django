@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-3">
+    <h4>Sellers</h4>
+    <a href="{% url 'create_seller' %}">New Seller</a>
+    <hr>
+    <table class="table"> 
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>E-mail</th>
+                <th>CPF / CNPJ</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for seller in sellers %}
+                <tr>
+                    <td>{{ seller.id }}</td>
+                    <td>{{ seller.name }}</td>
+                    <td>{{ seller.last_name  }}</td>
+                    <td>{{ seller.email }}</td>
+                    <td>{{ seller.document }}</td>
+                    <td>
+                        <a href="update/{{seller.id}}" class="btn btn-sm btn-info">Update</a>
+                        <a href="delete/{{seller.id}}"class="btn btn-sm btn-danger">Delete</a>
+                        <a href="seller_data/{{seller.id}}" class="btn btn-sm btn-info">Address</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}
