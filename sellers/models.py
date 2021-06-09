@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.deletion import CASCADE
 from django.db.models.fields import CharField, IntegerField
 from django.db.models.fields.related import ForeignKey
+from django.shortcuts import resolve_url as r
 
 
 class Sellers(models.Model):
@@ -14,6 +15,8 @@ class Sellers(models.Model):
     def __str__(self):
         return self.name
 
+def get_absolute_url(self):
+        return r('list_sellers')
 
 class SellerData(models.Model):
 
