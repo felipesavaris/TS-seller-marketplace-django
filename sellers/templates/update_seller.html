@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-3">
+    <h4>Update Seller</h4>
+    <a href="{% url 'list_sellers' %}">Voltar</a>
+    <hr>
+    <form action="/update/{{seller.id}}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="">Name</label>
+            <input type="text" name="name" value="{{seller.name}}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Last_Name</label>
+            <input type="text" name="last_name" value="{{seller.last_name}}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">E-mail</label>
+            <input type="text" name="email" value="{{seller.email}}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">CPF / CNPJ</label>
+            <input type="text" name="document" value="{{seller.document}}" class="form-control">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Update</button>
+            <a href="{% url 'list_sellers' %}"></a>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
