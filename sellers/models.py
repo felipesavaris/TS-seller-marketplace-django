@@ -15,8 +15,8 @@ class Sellers(models.Model):
     def __str__(self):
         return self.name
 
-def get_absolute_url(self):
-        return r('list_sellers')
+    # def get_absolute_url(self):
+    #     return r('list_sellers')
 
 class SellerData(models.Model):
 
