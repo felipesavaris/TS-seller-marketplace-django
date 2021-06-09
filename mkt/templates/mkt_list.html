@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Meus Marketplace {% endblock %}
+
+{% block content %}
+
+    <section class="section-content">
+        <div class="container">
+            <h3>Lista de Marketplace</h3>
+            <br>
+            <p><a class="btn btn-success" href="{% url 'mkt-add' %}">Novo Marketplace</a></p>
+
+            <table class="table table_bordered">
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Site</th>
+                    <th>Responsável técnico</th>
+                    <th>Ação</th>
+                </tr>
+
+                {% for market in marketplace_list %}
+                    <tr>
+
+                        <td>{{ market.id }}</td>
+                        <td>{{ market.name }}</td>
+                        <td>{{ market.description }}</td>
+                        <td>{{ market.contact_phone }}</td>
+                        <td>{{ market.contact_email }}</td>
+                        <td>{{ market.website }}</td>
+                        <td>{{ market.technical_manager }}</td>
+                        <td>
+                            <a href="{% url 'mkt-update' market.pk %}">Editar</a> |
+                            <a href="{% url 'delete-mkt' market.pk %}">Deletar
+
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+{% endblock %}
+

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="section-content">
+        <div class="container">
+            <h3>Deleta: {{ config.id }}</h3>
+            <br>
+
+            <form action="" method="post">
+
+                {% csrf_token %}
+
+              <strong>Are you sure ?!</strong><br/><br/>
+                <button type="submit" class="btn btn-success">Deleta</button>
+            </form>
+        </div>
+    </section>
+{% endblock %}

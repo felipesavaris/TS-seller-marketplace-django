@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Tech Store{% endblock %}</title>
+
+    <!--css's-->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vendor/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vendor/css/star-rating.min.css' %}">
+</head>
+<body>
+
+{% include 'nav.html'%}
+
+
+<div class="page-market-place">
+
+            {% block content %}{% endblock %}
+
+
+    <!--FOOTER-->
+    <footer class="footer-market-place">
+        <div class="container">
+            <div class="col-md-12">
+                <p>
+                    Copyright © todos os direitos reservados
+                </p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!--js's-->
+<script src="{% static 'js/vendor/jquery.min.js' %}"></script>
+<script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/vendor/star-rating.min.js' %}"></script>
+<script src="{% static 'js/vendor/star-rating_locale_pt-br.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
