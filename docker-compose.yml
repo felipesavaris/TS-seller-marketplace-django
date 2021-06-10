@@ -11,9 +11,10 @@ services:
       olist-db
      
     volumes:
-      - ./seller_and_marketplace:/seller_and_marketplace
-      - ./sellers:/sellers
-      - ./mkt:/mkt
+      # - ./seller_and_marketplace:/seller_and_marketplace
+      # - ./sellers:/sellers
+      # - ./mkt:/mkt
+      - ./:/code
     ports:
       - 8000:8000
     env_file:

@@ -1,14 +1,19 @@
 
 import pytest
-from mkt.models import Configuration
+from mkt.models import Marketplace
 
 @pytest.mark.django_db
 def test_configuration_model():
-    configuration = Configuration(endpoint="https://www.google.com/",
-                                  secret_key="234353435",
-                                  apis="https://www.google.com/")
-    configuration.save()
-    assert configuration.endpoint == "https://www.google.com/"
-    assert configuration.secret_key == "234353435"
-    assert configuration.apis == "https://www.google.com/"
-    assert str(configuration) == configuration.secret_key
+    marketplace = Marketplace(name='test',
+                              description="testing",
+                              contact_phone="234353435",
+                              contact_email="victor@gmail.com",
+                              technical_manager='hugo')
+    marketplace.save()
+    assert marketplace.name == "test"
+    assert marketplace.description == "testing"
+    assert marketplace.contact_phone == "234353435"
+    assert marketplace.contact_email == "victor@gmail.com"
+    assert marketplace.technical_manager == "hugo"
+
+    assert str(marketplace) == marketplace.name

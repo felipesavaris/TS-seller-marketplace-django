@@ -7,9 +7,9 @@ ENV PYTHONUNBUFFERED 1
 
 
 # set diretorio de trabalho
-ADD . /
+ADD . /code
 
-WORKDIR /
+WORKDIR /code
 
 #install depedencias
 RUN pip install poetry
