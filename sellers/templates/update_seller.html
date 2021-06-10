@@ -6,7 +6,7 @@
     <h4>Update Seller</h4>
     <a href="{% url 'list_sellers' %}">Voltar</a>
     <hr>
-    <form action="/update/{{seller.id}}" method="POST">
+    <form action="" method="POST">
         {% csrf_token %}
         <div class="form-group">
             <label for="">Name</label>
